@@ -1,4 +1,5 @@
-<svg id="variable-logo" width="200" height="174" viewBox="0 0 100 88">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="variable-logo" width="200" height="174" viewBox="0 0 100 88">
     <polygon fill="#464e80" points="0,0 32,0 16,28"></polygon>
     <polygon fill="#5b85bf" points="33,1 17,29 49,29"></polygon>
     <polygon fill="#464e80" points="17,30 49,30 33,58"></polygon>
