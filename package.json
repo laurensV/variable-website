@@ -1,0 +1,19 @@
+{
+  "name": "variable-website",
+  "version": "1.0.0",
+  "description": "Variable B.V. Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurensv/variable-website.git"
+  },
+  "author": "Laurens Verspeek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laurensv/variable-website/issues"
+  },
+  "homepage": "https://github.com/laurensv/variable-website#readme"
+}
