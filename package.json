@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/laurensv/variable-website/issues"
   },
-  "homepage": "https://github.com/laurensv/variable-website#readme"
+  "homepage": "https://github.com/laurensv/variable-website#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
 }
