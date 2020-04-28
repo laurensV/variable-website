@@ -1,23 +1,27 @@
 {
   "name": "variable-website",
   "version": "1.0.0",
-  "description": "Variable B.V. Website",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/laurensv/variable-website.git"
-  },
+  "description": "Variable Website",
   "author": "Laurens Verspeek",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/laurensv/variable-website/issues"
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore variable-website"
   },
-  "homepage": "https://github.com/laurensv/variable-website#readme",
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/dotenv": "^1.4.0"
+  },
   "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-sass": "^4.0.2"
+    "@nuxtjs/vuetify": "^1.0.0",
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2"
   }
 }
