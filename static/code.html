@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <textarea id="html" rows="10" cols="40"></textarea>
+    <div id="app"></div>
+  </body>
+</html>
+
+<script>
+  let html, app;
+  let interval = 16, step = 0;
+  document.addEventListener("DOMContentLoaded", function() {
+    html = document.getElementById('html');
+    app = document.getElementById('app');
+    // Mirror user edits back to the style element.
+    html.addEventListener('input', function() {
+      app.innerHTML = html.value;
+      if (step === 1) {
+        const content = app.textContent.toLowerCase();
+        if (content.includes('hello, world') || content.includes('hello world')) {
+          step++;
+          const step2 = `
+<!--
+You did it!
+You greeted the world!
+
+Now let's add some styling to Website:-->
+<style>
+/* Let's set smooooth transitions for our styling changes */
+* {
+  transition: all 1s;
+}
+
+/* Let's change some of the basic styling */
+body {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 8px;
+
+  /* Do you like dark mode, Human? */
+  background: #08071a;
+
+  /* That's a bit hard to read, sorry! */
+  color: white;
+}
+
+/**
+* That's better!
+* Now the world can see your greeting again.
+*
+* This textarea is a bit small and in the way..
+* Let's make something better
+*/
+textarea {
+  width: calc(100% - 20px);
+  margin: 10px;
+  background: rgb(48, 48, 48);
+  color: white;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-family: monospace;
+  padding: 10px;
+  box-shadow: -4px 4px 2px 0 rgba(0,0,0,0.3);
+  white-space: pre-wrap;
+  height: 250px;
+  position: fixed;
+  bottom: calc(100% - 270px);
+  left: 0;
+
+  /* Hmm now we are blocking our greetings.
+   * Let's move to the bottom
+   */
+  bottom: 0;
+}
+
+
+</style>`
+          type(step2);
+        }
+      }
+      console.log(app.textContent)
+    });
+    const initial = `<!--
+Hi Human!
+
+I am Website.
+
+Not much too see here at the moment..
+I am just a simple textarea
+with a little bit of javascript attached.
+
+That javascript does 2 things:
+1. Autotype some predefined text based on triggers
+2. Mirror the input in this textarea to the DOM
+
+Let me show you the power of that:
+-->
+Welcome Human!<br>
+<!--
+Well that was cool!
+Now Website is at least welcoming you :)
+
+Can you help me build this site?
+
+Add "hello, world" to the DOM by typing it in here:-->
+`;
+    type(initial);
+  });
+
+
+  function type (code, index = 0) {
+    if (index < code.length) {
+      const char = code[index++];
+      html.value += char
+      html.dispatchEvent(new Event('input'));
+      html.scrollTop = html.scrollHeight;
+      let multiplier = 1;
+      if (char === '\n') multiplier = 20;
+      setTimeout(() => {
+        type(code, index)
+      }, interval * multiplier)
+    } else {
+      step++;
+    }
+  }
+</script>
